@@ -38,12 +38,6 @@
       <h1 id="logo-wrap">
         <a href="/" id="logo">小二郎的博客</a>
       </h1>
-      <ul class="header-info">
-        <li class="info-item">微信</li>
-        <li class="info-item">微博</li>
-        <li class="info-item">邮箱</li>
-        <li class="info-item">手机</li>
-      </ul>
       
     </div>
     <div id="header-inner" class="inner">
@@ -129,9 +123,8 @@
 <li><pre><code>meta: &#123;
     showData: true
 &#125;
-
 路由组件中&lt;DataComponent v-show=&quot;$route.meta.showData&quot; /&gt;
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - @click &#x3D; &quot;$router.back()&quot; 用于路由页面返回  </span><br><span class="line"></span><br><span class="line">  - $route: 是当前路由对象,一些当前路由信息的数据容器, path&#x2F;meta&#x2F;query&#x2F;params</span><br><span class="line"></span><br><span class="line">  - $router: 路由器对象, 包含一些操作路由的功能函数, 来实现编程式导航, 路由跳转</span><br><span class="line"></span><br><span class="line">  - router-view &#x2F; router-link &#x2F; keep-alive</span><br><span class="line"></span><br><span class="line">  - keep-alive用来缓存组件,避免多次加载相应的组件,减少性能消耗，简单一点来说就是从页面1链接到其他页面后回退到页面1不用在重新执行页面1的代码，只会从缓存中加载之前已经缓存的页面1，这样可以减少加载时间及性能消耗，提高用户体验性。</span><br><span class="line"></span><br><span class="line">- swiper: 设置轮播图库 npm install --save swiper ( 具体查看swiper官网 )</span><br><span class="line"></span><br><span class="line">  - 引入 &#96;import Swiper from &#39;swiper&#39;&#96; &#96;import &#39;swiper&#x2F;dist&#x2F;css&#x2F;swiper.min.css&#39;&#96;</span><br><span class="line"></span><br><span class="line">- watch: &#123;&#125; 监听属性</span><br><span class="line"></span><br><span class="line">- 解决data类型不匹配问题  期望是数组,给了个字符串, 转换类型</span><br><span class="line"></span><br><span class="line">- 解决length未定义问题, 加个v-if,  有长度才渲染</span><br><span class="line"></span><br><span class="line">- 解决slice未定义问题, 在数组加一个空数组 [ ] 的情况 &#96;(array || [] ).slice(0, 1)&#96;</span><br><span class="line"></span><br><span class="line">- gitlab</span><br><span class="line"></span><br><span class="line">- v-contextmenu</span><br><span class="line"></span><br><span class="line">- 父子组件函数方法传值调用</span><br><span class="line"></span><br><span class="line">- get set方法</span><br><span class="line"></span><br><span class="line">- mapstate展开</span><br><span class="line"></span><br><span class="line">- ElementUI:  &#96;&lt;https:&#x2F;&#x2F;element.eleme.cn&#x2F;#&#x2F;zh-CN&#x2F;component&#x2F;installation&gt;&#96;</span><br><span class="line"></span><br><span class="line">- scss</span><br><span class="line"></span><br><span class="line">- height:  高度充满项目的写法&#96;style&#x3D;&quot;height: calc(100vh - 100px);&quot;&#96;</span><br><span class="line"></span><br><span class="line">- lodash: 提供了一些数组,对象常用的方法, 通过降低 array、number、objects、string 等等的使用难度从而让 JavaScript 变得更简单。</span><br><span class="line"></span><br><span class="line">- svg:  </span><br><span class="line"></span><br><span class="line">- quill(文本编辑器):  </span><br><span class="line"></span><br><span class="line">  - **安装依赖**</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - @click &#x3D; &quot;$router.back()&quot; 用于路由页面返回  </span><br><span class="line"></span><br><span class="line">  - $route: 是当前路由对象,一些当前路由信息的数据容器, path&#x2F;meta&#x2F;query&#x2F;params</span><br><span class="line"></span><br><span class="line">  - $router: 路由器对象, 包含一些操作路由的功能函数, 来实现编程式导航, 路由跳转</span><br><span class="line"></span><br><span class="line">  - router-view &#x2F; router-link &#x2F; keep-alive</span><br><span class="line"></span><br><span class="line">  - keep-alive用来缓存组件,避免多次加载相应的组件,减少性能消耗，简单一点来说就是从页面1链接到其他页面后回退到页面1不用在重新执行页面1的代码，只会从缓存中加载之前已经缓存的页面1，这样可以减少加载时间及性能消耗，提高用户体验性。</span><br><span class="line"></span><br><span class="line">- swiper: 设置轮播图库 npm install --save swiper ( 具体查看swiper官网 )</span><br><span class="line"></span><br><span class="line">  - 引入 &#96;import Swiper from &#39;swiper&#39;&#96; &#96;import &#39;swiper&#x2F;dist&#x2F;css&#x2F;swiper.min.css&#39;&#96;</span><br><span class="line"></span><br><span class="line">- watch: &#123;&#125; 监听属性</span><br><span class="line"></span><br><span class="line">- 解决data类型不匹配问题  期望是数组,给了个字符串, 转换类型</span><br><span class="line"></span><br><span class="line">- 解决length未定义问题, 加个v-if,  有长度才渲染</span><br><span class="line"></span><br><span class="line">- 解决slice未定义问题, 在数组加一个空数组 [ ] 的情况 &#96;(array || [] ).slice(0, 1)&#96;</span><br><span class="line"></span><br><span class="line">- gitlab</span><br><span class="line"></span><br><span class="line">- v-contextmenu</span><br><span class="line"></span><br><span class="line">- 父子组件函数方法传值调用</span><br><span class="line"></span><br><span class="line">- get set方法</span><br><span class="line"></span><br><span class="line">- mapstate展开</span><br><span class="line"></span><br><span class="line">- ElementUI:  &#96;&lt;https:&#x2F;&#x2F;element.eleme.cn&#x2F;#&#x2F;zh-CN&#x2F;component&#x2F;installation&gt;&#96;</span><br><span class="line"></span><br><span class="line">- scss</span><br><span class="line"></span><br><span class="line">- height:  高度充满项目的写法&#96;style&#x3D;&quot;height: calc(100vh - 100px);&quot;&#96;</span><br><span class="line"></span><br><span class="line">- lodash: 提供了一些数组,对象常用的方法, 通过降低 array、number、objects、string 等等的使用难度从而让 JavaScript 变得更简单, </span><br><span class="line"></span><br><span class="line">  - cloneDeep</span><br><span class="line"></span><br><span class="line">- svg:  </span><br><span class="line"></span><br><span class="line">- quill(文本编辑器):  </span><br><span class="line"></span><br><span class="line">  - **安装依赖**</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 npm install vue-quill-editor --save
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- **使用**</span><br><span class="line"></span><br><span class="line">  （1）在“项目名\src\main.js”引入</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 import Vue from &#39;vue&#39;
@@ -140,9 +133,9 @@ import VueQuillEditor from &#39;vue-quill-editor&#39;
 &lt;template&gt; 
     &lt;el-row&gt;  
         &lt;quill-editor    v-model=&quot;content&quot;    :options=&quot;editorOption&quot;
-                        @blur=&quot;onEditorBlur($event)&quot;
-                        @focus=&quot;onEditorFocus($event)&quot;
-                        @change=&quot;onEditorChange($event)&quot;&gt;  
+            @blur=&quot;onEditorBlur($event)&quot;
+            @focus=&quot;onEditorFocus($event)&quot;
+            @change=&quot;onEditorChange($event)&quot;&gt;  
         &lt;/quill-editor&gt;
     &lt;/el-row&gt;
 &lt;/template&gt;
@@ -259,6 +252,45 @@ handleClick (vm) &#123;
 <li><code>&lt;iframe src=&quot;www.baidu.com&quot;&gt;&lt;/iframe&gt;</code></li>
 </ul>
 </li>
+<li><p>只要 协议 、 域名 、 端口 有任何一个 不同, 都被当作是 不同 的域</p>
+<ul>
+<li>CORS（Corss-Origin Resource Sharing,跨资源共享），基本思想是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应的成功或失败。即给请求附加一个额外的Origin头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部决定是否给予响应。</li>
+<li>将页面的document.domain设置为相同的值，页面间可以互相访问对方的JavaScript对象。<br>注意：不能将值设置为URL中不包含的域；松散的域名不能再设置为紧绷的域名。</li>
+<li>图像Ping最常用于跟踪用户点击页面或动态广告曝光次数。缺点：只能发送GET请求；无法访问服务器的响应文本，只能用于浏览器与服务器间的单向通信。</li>
+<li>JSONP由两部分组成：回调函数和数据 回调函数是接收到响应时应该在页面中调用的函数，其名字一般在请求中指定。数据是传入回调函数中的JSON数据。优点：能够直接访问响应文本，可用于浏览器与服务器间的双向通信。缺点：JSONP从其他域中加载代码执行，其他域可能不安全；难以确定JSONP请求是否失败。</li>
+<li>Comet可实现服务器向浏览器推送数据。Comet是实现方式：长轮询和流短轮询即浏览器定时向服务器发送请求，看有没有数据更新。长轮询即浏览器向服务器发送一个请求，然后服务器一直保持连接打开，直到有数据可发送。发送完数据后，浏览器关闭连接，随即又向服务器发起一个新请求。其优点是所有浏览器都支持，使用XHR对象和setTimeout()即可实现。流即浏览器向服务器发送一个请求，而服务器保持连接打开，然后周期性地向浏览器发送数据，页面的整个生命周期内只使用一个HTTP连接。</li>
+<li>WebSocket可在一个单独的持久连接上提供全双工、双向通信。WebSocket使用自定义协议，未加密的连接时ws://；加密的链接是wss://。注意：必须给WebSocket构造函数传入绝对URL；WebSocket可以打开任何站点的连接，是否会与某个域中的页面通信，完全取决于服务器；WebSocket只能发送纯文本数据，对于复杂的数据结构，在发送之前必须进行序列化JSON.stringify(message))。优点：在客户端和服务器之间发送非常少的数据，减少字节开销。</li>
+</ul>
+</li>
+<li><p>以下是四种touch事件</p>
+<ul>
+<li>touchstart:     //手指放到屏幕上时触发</li>
+<li>touchmove:      //手指在屏幕上滑动式触发</li>
+<li>touchend:    //手指离开屏幕时触发</li>
+<li>touchcancel:     //系统取消touch事件的时候触发，这个好像比较少用</li>
+</ul>
+</li>
+<li><p>方法的返回值</p>
+<ul>
+<li>Object.keys() 该方***返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和使用 for…in 循环遍历该对象时返回的顺序一致 。如果对象的键-值都不可枚举，那么将返回由键组成的数组。</li>
+<li>String.prototype.split() split() 方法使用指定的分隔符字符串将一个String对象分割成字符串数组，以将字符串分隔为子字符串，以确定每个拆分的位置。返回数组</li>
+<li>Array.prototype.join() join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。返回字符串。</li>
+<li>Promise.all() Promise.all(iterable) 方法返回一个 Promise 实例，此实例在 iterable 参数内所有的 promise 都“完成（resolved）”或参数中不包含 promise 时回调完成（resolve）；如果参数中 promise 有一个失败（rejected），此实例回调失败（reject），失败原因的是第一个失败 promise 的结果。返回的是promise对象。</li>
+</ul>
+</li>
+<li><p>ascon await 将异步数据实现同步操作,相当于等异步的任务完成后, 在等await执行</p>
+</li>
+<li><p>style=”display:block; width: 147px; margin-mottom: 4px” 与 :style=”{lineHeight:’17px’, marginBottom: ‘2px’, fontSize: (item.con.fontSize+’px’)||’12px’}” 与 :class=”[(shareStyle.isShow || starStyle.isShow) ? ‘isShowBtn’ :’notShowBtn’]”</p>
+</li>
+<li><p>this.$set(this.specialActiveItem.option.contentSelect, this.dataIndex, this.currSelectItem)  同步更新设置contentSelect数组或者对象,页面同步渲染显示, 第二个参数是index或者key,第三个参数是value</p>
+</li>
+</ul>
+<ul>
+<li>难点: <ul>
+<li>编辑区域的弹窗提示位置问题,缩放问题,分辨率问题</li>
+<li>h5页面的视频流初始化问题,点赞分享播放推荐语消失</li>
+</ul>
+</li>
 </ul>
 
       
@@ -302,10 +334,10 @@ handleClick (vm) &#123;
 <h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 
-<h4 id="Run-localhost-server"><a href="#Run-localhost-server" class="headerlink" title="Run localhost server"></a>Run localhost server</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-
 <h4 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Run-localhost-server"><a href="#Run-localhost-server" class="headerlink" title="Run localhost server"></a>Run localhost server</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
 
 
 <h4 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
