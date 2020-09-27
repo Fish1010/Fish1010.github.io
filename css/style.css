@@ -337,7 +337,6 @@ body {
   position: relative;
 }
 #header-inner {
-  position: relative;
   overflow: hidden;
   position: absolute;
 }
@@ -359,7 +358,6 @@ body {
   position: absolute;
   top: 40%;
   left: 0;
-  margin-top: -20px;
 }
 #logo,
 #subtitle {
@@ -388,7 +386,6 @@ body {
 .main-nav-link {
   float: left;
   color: #fff;
-  border: 1px solid #2f477a;
   border-radius: 10px;
   background-color: #00aced;
   margin-right: 10px;
@@ -400,7 +397,6 @@ body {
   transition: background-color 0.2s;
   display: block;
   text-align: center;
-  border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
 }
@@ -414,9 +410,6 @@ body {
   font-size: 14px;
   width: 14px;
   height: 14px;
-  padding: 10px 15px;
-  text-align: center;
-  border-radius: 5px;
   position: relative;
   margin-top: 4px;
 }
