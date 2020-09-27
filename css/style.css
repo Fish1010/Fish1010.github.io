@@ -339,7 +339,7 @@ body {
 #header-inner {
   position: relative;
   overflow: hidden;
-  top: 80%;
+  top: 10%;
   position: absolute;
 }
 #banner {
@@ -384,24 +384,21 @@ body {
 }
 #main-nav {
   float: left;
-  margin-left: -15px;
 }
 .nav-icon,
 .main-nav-link {
   float: left;
   color: #fff;
-  opacity: 0.6;
   border: 1px solid #2f477a;
   border-radius: 10px;
   background-color: #00aced;
   margin-right: 10px;
-  margin-top: 250px;
   text-decoration: none;
   text-shadow: 0 1px rgba(0,0,0,0.2);
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
-  transition: opacity 0.2s;
+  transition: background-color 0.2s;
   display: block;
   text-align: center;
   border-radius: 5px;
@@ -409,7 +406,7 @@ body {
 }
 .nav-icon:hover,
 .main-nav-link:hover {
-  opacity: 1;
+  background-color: #02a1db;
 }
 .nav-icon {
   font-family: FontAwesome;
@@ -422,6 +419,7 @@ body {
   border-radius: 5px;
   position: relative;
   cursor: pointer;
+  margin-top: 254px;
 }
 .main-nav-link {
   font-weight: 400;
@@ -445,7 +443,6 @@ body {
 }
 #sub-nav {
   float: right;
-  margin-right: -15px;
 }
 #nav-rss-link:before {
   content: "\f09e";
