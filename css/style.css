@@ -339,7 +339,6 @@ body {
 #header-inner {
   position: relative;
   overflow: hidden;
-  top: 10%;
   position: absolute;
 }
 #banner {
@@ -358,7 +357,7 @@ body {
   text-align: center;
   height: 40px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 0;
   margin-top: -20px;
 }
@@ -403,6 +402,7 @@ body {
   text-align: center;
   border-radius: 5px;
   padding: 10px 15px;
+  cursor: pointer;
 }
 .nav-icon:hover,
 .main-nav-link:hover {
@@ -418,8 +418,7 @@ body {
   text-align: center;
   border-radius: 5px;
   position: relative;
-  cursor: pointer;
-  margin-top: 254px;
+  margin-top: 4px;
 }
 .main-nav-link {
   font-weight: 400;
