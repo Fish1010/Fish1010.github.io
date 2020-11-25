@@ -15,7 +15,7 @@
 <meta property="og:description" content="快速上手环境搭建 安装Angular CLI  1npm install -g @angular&#x2F;cli   打包发布  1npm run dist  基本概念 angular js的主体是页面中动态的数据，jq的主体是DOM  依赖对象：完成某个特定功能需要某个对象才能实现，这个对象就是依赖对象  依赖注入：依赖的对象以形参的形式被注入进来使用，这种方式就是声明式依赖注入  Angular的$s">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-20T02:48:45.000Z">
-<meta property="article:modified_time" content="2020-11-24T09:24:45.940Z">
+<meta property="article:modified_time" content="2020-11-25T07:34:40.587Z">
 <meta property="article:author" content="Yebo">
 <meta name="twitter:card" content="summary">
   
@@ -115,18 +115,18 @@
 </li>
 <li><p><code>ng-init</code>：用来初始化（在页面写<code>ng-init=&quot;aaa&quot;</code>）当前作用域变量（单向数据绑定View =&gt; Model）</p>
 </li>
-<li><p><code>&#123;&#123;&#125;&#125;`（表达式）：显示数据，从当前作用域对象的指定属性名上取（单向数据绑定Model => View）
-
-- `ng-controller`：指定控制器构造函数，Angular会自动new此函数创建控制器对象，同时Angular还有创建一个新的作用域对象`$scope`，它是`$rootScope`的子对象，在控制器函数中声明`$scope`形参，形参必须是`$scope`，Angular会自动将`$scope`传入
-
-- `ng-click`：点击监听，值为函数调用，可以传入$event
-
-- `ng-bind`：解决使用`&#123;&#123;&#125;&#125;</code>显示数据闪屏，闪屏原因是因为代码从上往下解析，angular.js是在最下面引入的，最初解析到大括号处，以普通文本显示出来，还不能知道这是angular.js的语法，<code>ng-bind</code>能解决问题的原因是，<code>ng-bind</code>属于标签属性，解析不认识也不会显示，只会认识标签里面的内容，所以就会默认标签中间为空。</p>
+<li><p><code>表达式(&#123;&#123;&#125;&#125;)</code>：显示数据，从当前作用域对象的指定属性名上取（单向数据绑定Model =&gt; View）</p>
+</li>
+<li><p><code>ng-controller</code>：指定控制器构造函数，Angular会自动new此函数创建控制器对象，同时Angular还有创建一个新的作用域对象<code>$scope</code>，它是<code>$rootScope</code>的子对象，在控制器函数中声明<code>$scope</code>形参，形参必须是<code>$scope</code>，Angular会自动将<code>$scope</code>传入</p>
+</li>
+<li><p><code>ng-click</code>：点击监听，值为函数调用，可以传入$event</p>
+</li>
+<li><p><code>ng-bind</code>：解决使用双大括号表达式显示数据闪屏，闪屏原因是因为代码从上往下解析，angular.js是在最下面引入的，最初解析到大括号处，以普通文本显示出来，还不能知道这是angular.js的语法，<code>ng-bind</code>能解决问题的原因是，<code>ng-bind</code>属于标签属性，解析不认识也不会显示，只会认识标签里面的内容，所以就会默认标签中间为空。</p>
 </li>
 <li><p><code>ng-repeat</code>：遍历数组显示数据，数组有几个元素就会产生几个新的作用域</p>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$index(索引), $first(判断是否是第一个), $last(判断是否是最后一个), $middle(除了第一个和最后一个的中间值), $old(判断是否是奇数), $even(判断是否是偶数)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$index(索引)  $first(判断是否是第一个)</span><br><span class="line">$last(判断是否是最后一个) $middle(除了第一个和最后一个的中间值)</span><br><span class="line">$old(判断是否是奇数)  $even(判断是否是偶数)</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p><code>ng-show</code>：布尔类型，结果为true显示</p>
