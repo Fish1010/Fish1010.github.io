@@ -178,7 +178,7 @@ body {
 .mobile-nav-on #wrap {
   left: 280px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 700px) {
   #main {
     display: inline-block;
     width: 72.33333333333333%;
@@ -1288,7 +1288,7 @@ pre .javascript .function {
     color: #fff;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 700px) {
   #sidebar {
     display: inline-block;
     width: 22.333333333333332%;
