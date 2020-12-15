@@ -67,16 +67,730 @@
     <article id="post-Vue学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/12/15/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2020-12-15T03:48:33.846Z" itemprop="datePublished">2020-12-15</time>
+  <time datetime="2020-12-15T03:48:33.000Z" itemprop="datePublished">2020-12-15</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/15/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Vue学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="VUE学习笔记"><a href="#VUE学习笔记" class="headerlink" title="VUE学习笔记"></a>VUE学习笔记</h3><h4 id="直接通过cdn引入"><a href="#直接通过cdn引入" class="headerlink" title="直接通过cdn引入"></a>直接通过cdn引入</h4><ul>
+<li><p><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</code></p>
+</li>
+<li><p>第二部实例化vue对象</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">new Vue (&#123;</span><br><span class="line">  el: <span class="string">&quot;#box&quot;</span>, //element需要获取的元素,一定是html中的根容器box内元素</span><br><span class="line">  data:&#123; //用于数据的存储  //调用 &#123;&#123; name &#125;&#125;</span><br><span class="line">      name: <span class="string">&quot;jack&quot;</span>,</span><br><span class="line">      job: <span class="string">&quot;程序员&quot;</span>,</span><br><span class="line">      baidu: <span class="string">&quot;www.baidu.com&quot;</span>,</span><br><span class="line">      web: <span class="string">&quot;&lt;a href=&quot;</span>www.baidu.com<span class="string">&quot;&gt;百度&lt;/a&gt;&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123; //用于方法的存储 //调用 &#123;&#123; hello(<span class="string">&quot;Morning&quot;</span>) &#125;&#125;</span><br><span class="line">      hello: <span class="keyword">function</span>( time )&#123;</span><br><span class="line">          <span class="built_in">return</span> <span class="string">&quot;Good &quot;</span> + time + <span class="string">&quot; &quot;</span> + this.name + <span class="string">&quot;!&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Vue-CLI脚手架搭建"><a href="#Vue-CLI脚手架搭建" class="headerlink" title="Vue CLI脚手架搭建"></a>Vue CLI脚手架搭建</h4><ul>
+<li><p>优势:</p>
+<ul>
+<li><p>是通过webpack搭建的开发环境</p>
+</li>
+<li><p>使用ES6语法</p>
+</li>
+<li><p>打包和压缩JS为一个文件</p>
+</li>
+<li><p>项目文件在环境中编译而不是浏览器</p>
+</li>
+<li><p>实现页面自动刷新</p>
+</li>
+</ul>
+</li>
+<li><p>步骤:</p>
+<ul>
+<li><p>检查安装node.js ( node -v )</p>
+</li>
+<li><p>检查安装npm ( npm -v )</p>
+</li>
+<li><p>npm install –global vue-cli</p>
+</li>
+<li><p>检查vue ( vue –version )</p>
+</li>
+<li><p>进入指定文件下创建项目 ( vue init webpack my-project )</p>
+</li>
+<li><p>进入项目内部 ( cd my-project )</p>
+</li>
+<li><p>下载相关依赖 ( npm install )</p>
+</li>
+<li><p>启动项目 ( npm run dev )</p>
+</li>
+<li><p>访问<code>http://localhost:8080</code>查看结果</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="项目目录详解"><a href="#项目目录详解" class="headerlink" title="项目目录详解"></a>项目目录详解</h4><ul>
+<li><p><code>build</code>:  基于webpack的配置信息</p>
+</li>
+<li><p><code>config</code>:  项目核心配置</p>
+<ul>
+<li><p>修改端口号</p>
+</li>
+<li><p>自动打开网址</p>
+</li>
+</ul>
+</li>
+<li><p><code>node_module</code>:  安装依赖模块</p>
+</li>
+<li><p><code>src/main.js</code>:  程序入口文件</p>
+</li>
+<li><p><code>src/app.vue</code>:  程序入口vue组件</p>
+</li>
+<li><p><code>src/assets</code>:  资源文件夹(一般是静态资源)</p>
+</li>
+<li><p><code>static</code>:  纯静态资源(直接拷贝到里面)</p>
+</li>
+<li><p><code>.babelrc</code>:  ES6转码器, 转换成浏览器识别的ES5</p>
+</li>
+<li><p><code>.editorconfig</code>:  编辑配置文件</p>
+</li>
+<li><p><code>.gitignore</code>:  过滤一些版本控制的文件</p>
+</li>
+<li><p><code>index.html</code>:  整个项目加载的文件</p>
+</li>
+<li><p><code>package.json</code>:  非常完整的项目版本组件等基本信息介绍</p>
+</li>
+</ul>
+<h4 id="事件指令"><a href="#事件指令" class="headerlink" title="事件指令"></a>事件指令</h4><ul>
+<li><p>通过<code>v-bind</code>: 绑定样式, 可以拿到baidu的值, 给a标签的href属性赋值, 写法是<code>v-bind:href=&quot;baidu&quot;</code>, 还可以绑定type,value等</p>
+</li>
+<li><p>通过<code>v-html</code>: 绑定,可以拿到web的值, 获取到完整的a标签, 显示可跳转的百度</p>
+</li>
+<li><p>通过<code>v-on</code>: 或者@将事件绑定到标签上</p>
+</li>
+<li><p><code>v-model</code> = “”  <strong>双向数据绑定</strong></p>
+</li>
+</ul>
+<h4 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h4><ul>
+<li><p>在标签中自定义<code>v-name</code> ( 不给定值得情况 ) ( 给定值情况 ) ( 给定参数情况 )</p>
+</li>
+<li><p>在main.js中使用( 全局使用 )</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive( <span class="string">&#x27;name&#x27;</span>, &#123; </span><br><span class="line">  <span class="built_in">bind</span>(el, binding, vnode)&#123; </span><br><span class="line">    el.style.color =  <span class="string">&quot;#&quot;</span> + Math.random().toString(16).slice(2, 8);</span><br><span class="line">    <span class="keyword">if</span>(binding.value == <span class="string">&quot;value&quot;</span>)&#123;  // v-name = <span class="string">&quot;&#x27;value&#x27;&quot;</span>(给定值的情况)</span><br><span class="line">              el.style.maxWidth = <span class="string">&quot;1200px&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(binding.arg == <span class="string">&quot;props&quot;</span>)&#123; //v-name:props= <span class="string">&quot;&#x27;value&#x27;&quot;</span>(给定参数的情况)</span><br><span class="line">              el.style.backgroundColor = <span class="string">&quot;red&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在子组件内部实现</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">directives:&#123;</span><br><span class="line">  <span class="string">&#x27;name&#x27;</span>: &#123;</span><br><span class="line">    <span class="built_in">bind</span>(el, binding, vnode)&#123; // <span class="built_in">bind</span>为钩子函数</span><br><span class="line">      el.style.color = red;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h4><ul>
+<li><p>修饰符可以串联,使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。</p>
+</li>
+<li><p><code>.stop</code> - 调用 <code>event.stopPropagation()</code>。</p>
+</li>
+<li><p><code>.prevent</code> - 调用 <code>event.preventDefault()</code>。执行完刷新页面</p>
+</li>
+<li><p><code>.capture</code> - 添加事件侦听器时使用 capture 模式。</p>
+</li>
+<li><p><code>.self</code> - 只当事件是从侦听器绑定的元素本身触发时才触发回调。</p>
+</li>
+<li><p><code>.&#123;keyCode | keyAlias&#125;</code> - 只当事件是从特定键触发时才触发回调。</p>
+</li>
+<li><p><code>.native</code> - 监听组件根元素的原生事件。</p>
+</li>
+<li><p><code>.once</code> - 只触发一次回调。</p>
+</li>
+<li><p><code>.left</code> - (2.2.0) 只当点击鼠标左键时触发。</p>
+</li>
+<li><p><code>.right</code> - (2.2.0) 只当点击鼠标右键时触发。</p>
+</li>
+<li><p><code>.middle</code> - (2.2.0) 只当点击鼠标中键时触发。</p>
+</li>
+<li><p><code>.passive</code> - (2.3.0) 以 <code>&#123; passive: true &#125;</code> 模式添加侦听器</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不要把 `.passive` 和 `.prevent` 一起使用，因为 `.prevent` 将会被忽略，同时浏览器可能会向你展示一个警告。请记住，`.passive` 会告诉浏览器你不想阻止事件的默认行为。</span><br></pre></td></tr></table></figure>
+
+<h4 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 只有在 `key` 是 `Enter` 时调用 `vm.submit()` --&gt;</span><br><span class="line">&lt;input v-on:keyup.enter=<span class="string">&quot;submit&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>.enter</code></p>
+</li>
+<li><p><code>.tab</code></p>
+</li>
+<li><p><code>.delete</code> (捕获“删除”和“退格”键)</p>
+</li>
+<li><p><code>.esc</code></p>
+</li>
+<li><p><code>.space</code></p>
+</li>
+<li><p><code>.up</code></p>
+</li>
+<li><p><code>.down</code></p>
+</li>
+<li><p><code>.left</code></p>
+</li>
+<li><p><code>.right</code></p>
+</li>
+<li><p>你还可以通过全局 <code>config.keyCodes</code> 对象<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#keyCodes">自定义按键修饰符别名</a>：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 可以使用 `v-on:keyup.f1`</span><br><span class="line">Vue.config.keyCodes.f1 = 112</span><br></pre></td></tr></table></figure>
+
+<h4 id="系统修饰键"><a href="#系统修饰键" class="headerlink" title="系统修饰键"></a>系统修饰键</h4><ul>
+<li><p><code>.ctrl</code></p>
+</li>
+<li><p><code>.alt</code></p>
+</li>
+<li><p><code>.shift</code></p>
+</li>
+<li><p><code>.meta</code></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在 Mac 系统键盘上，meta 对应 <span class="built_in">command</span> 键 (⌘)。在 Windows 系统键盘 meta 对应 Windows 徽标键 (⊞)。在 Sun 操作系统键盘上，meta 对应实心宝石键 (◆)。在其他特定键盘上，尤其在 MIT 和 Lisp 机器的键盘、以及其后继产品，比如 Knight 键盘、space-cadet 键盘，meta 被标记为“META”。在 Symbolics 键盘上，meta 被标记为“META”或者“Meta”。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>.exact</code>修饰符允许你控制由精确的系统修饰符组合触发的事件。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 有且只有 Ctrl 被按下的时候才触发 --&gt;</span><br><span class="line">&lt;button v-on:click.ctrl.exact=<span class="string">&quot;onCtrlClick&quot;</span>&gt;A&lt;/button&gt;</span><br><span class="line">&lt;!-- 没有任何系统修饰符被按下的时候才触发 --&gt;</span><br><span class="line">&lt;button v-on:click.exact=<span class="string">&quot;onClick&quot;</span>&gt;A&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>鼠标按键修饰符</p>
+<ul>
+<li><p><code>.left</code></p>
+</li>
+<li><p><code>.right</code></p>
+</li>
+<li><p><code>.middle</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="双向数据绑定-input-textarea-select"><a href="#双向数据绑定-input-textarea-select" class="headerlink" title="双向数据绑定  input / textarea / select"></a>双向数据绑定  input / textarea / select</h4><ul>
+<li><p>通过给标签添加 ref=” name1 “ , 用<code>v-on</code>: 绑定事件调用方法, 在方法中用this.name = this.$refs.name1.value 进行赋值</p>
+</li>
+<li><p>还可以用<code>v-model=&quot; &quot;</code>代替方法调用, 实现双向数据绑定</p>
+</li>
+</ul>
+<h4 id="计算属性-computed"><a href="#计算属性-computed" class="headerlink" title="计算属性 computed"></a>计算属性 computed</h4><ul>
+<li><p>computed和methods实现的效果完全一样,但是, 当我们重新渲染模板的时候,计算属性会立刻返回之前的值，而不用去执行函数，这样就提高了我们的渲染的效率.</p>
+</li>
+<li><p>在computed属性对象中定义计算属性的方法，在页面中使用<code>&#123;&#123;方法名&#125;&#125;</code>来显示计算的结果。</p>
+</li>
+<li><p>通过getter\setter实现对属性数据的显示和监视，计算属性是基于它们的<strong>响应式依赖</strong>进行缓存的，多次读取只执行一次getter计算。</p>
+</li>
+<li><p>(如果使用methods方法, 调用里面的某个方法,会将methods的所有方法全部调用,性能及其不好,而computed只会渲染所需要的方法,会提高性能,渲染效率高)</p>
+</li>
+</ul>
+<h4 id="动态绑定css样式"><a href="#动态绑定css样式" class="headerlink" title="动态绑定css样式"></a>动态绑定css样式</h4><ul>
+<li><p>我们可以传给 <code>v-bind:class</code> 一个对象，以动态地切换 class：</p>
+<ul>
+<li><code>&lt;div v-bind:class=&quot;&#123; active: isActive &#125;&quot;&gt;&lt;/div&gt;</code></li>
+</ul>
+</li>
+<li><p>我们也可以在这里绑定一个返回对象的<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/computed.html">计算属性</a>。这是一个常用且强大的模式：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:class=<span class="string">&quot;classObject&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">  isActive: <span class="literal">true</span>,</span><br><span class="line">  error: null</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">  classObject: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      active: this.isActive &amp;&amp; !this.error,</span><br><span class="line">      <span class="string">&#x27;text-danger&#x27;</span>: this.error &amp;&amp; this.error.type === <span class="string">&#x27;fatal&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>我们可以把一个数组传给 <code>v-bind:class</code>，以应用一个 class 列表：</p>
+<ul>
+<li><code>&lt;div v-bind:class=&quot;[activeClass, errorClass]&quot;&gt;&lt;/div&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h4><ul>
+<li><p><code>v-if</code> 指令用于条件性地渲染一块内容。这块内容只会在指令的表达式返回 truthy 值的时候被渲染, 否则就不存在DOM结构里面,(与v-show有区别) 也可以用 <code>v-else</code> 添加一个“else 块”：</p>
+<ul>
+<li>在<code>&lt;template&gt;</code>元素上使用<code>v-if</code>指令条件渲染分组</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template v-if=<span class="string">&quot;ok&quot;</span>&gt;</span><br><span class="line">  &lt;h1&gt;Title&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;Paragraph 1&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;Paragraph 2&lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>v-else</code> 指令来表示 <code>v-if</code> 的“else 块”：</p>
+<ul>
+<li><code>v-else</code> 元素必须紧跟在带 <code>v-if</code> 或者 <code>v-else-if</code> 的元素的后面，否则它将不会被识别。</li>
+</ul>
+</li>
+<li><p><code>v-else-if</code>(新增)，顾名思义，充当 <code>v-if</code> 的<code>else-if</code>块，可以连续使用：</p>
+</li>
+<li><p><code>key</code>管理可复用的元素</p>
+<ul>
+<li>Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这么做除了使 Vue 变得非常快之外，还有其它一些好处。例如，如果你允许用户在不同的登录方式之间切换：</li>
+</ul>
+</li>
+<li><p><code>v-show</code> 指令根据条件展示元素。用法大致一样：</p>
+<ul>
+<li>不同的是带有 <code>v-show</code> 的元素始终会被渲染并保留在 DOM 中。<code>v-show</code> 只是简单地切换元素的 CSS property <code>display</code>, 不展示就使display为none,站位隐藏, <code>v-show</code> 不支持 <code>&lt;template&gt;</code> 元素，也不支持 <code>v-else</code>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="v-if-vs-v-show"><a href="#v-if-vs-v-show" class="headerlink" title="v-if vs v-show"></a>v-if vs v-show</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`v-if`是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。</span><br><span class="line"></span><br><span class="line">`v-if` 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</span><br><span class="line"></span><br><span class="line">相比之下，`v-show` 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</span><br><span class="line"></span><br><span class="line">一般来说，`v-if` 有更高的切换开销，而 `v-show` 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 `v-show` 较好；如果在运行时条件很少改变，则使用 `v-if` 较好。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不推荐 <code>v-if</code> 与 <code>v-for</code> 一起使用, 一起使用时，<code>v-for</code> 具有比 <code>v-if</code> 更高的优先级</li>
+</ul>
+<h4 id="v-for循环"><a href="#v-for循环" class="headerlink" title="v-for循环"></a>v-for循环</h4><ul>
+<li><p>预期: <code>Array | Object | number | string | Iterable (2.6 新增)</code></p>
+</li>
+<li><p>基于源数据多次渲染元素或模板块。此指令之值，必须使用特定语法 <code>alias(别名) in expression</code>，为当前遍历的元素提供别名：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-for=<span class="string">&quot;item in items&quot;</span>&gt;</span><br><span class="line">  &#123;&#123; item &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同样可以使用<code>&lt;template&gt;</code>渲染多个标签</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">给v-for添加一个index,在绑定一个key值,表示唯一性,增加代码运行速率,</span><br><span class="line">&lt;template v-for=<span class="string">&quot;(item, index) in items&quot;</span> :key=<span class="string">&quot;item.name&quot;</span> &gt;&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件的应用"><a href="#组件的应用" class="headerlink" title="组件的应用"></a>组件的应用</h4><ul>
+<li>Vue 注册全局组件的示例</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 定义一个名为 button-counter 的新组件</span><br><span class="line">Vue.component(<span class="string">&#x27;button-counter&#x27;</span>, &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  template: <span class="string">&#x27;&lt;button v-on:click=&quot;count++&quot;&gt;You clicked me &#123;&#123; count &#125;&#125; times.&lt;/button&gt;&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&gt; 因为组件是可复用的 Vue 实例，所以它们与 `new Vue` 接收相同的选项，例如 `data`、`computed`、`watch`、`methods` 以及生命周期钩子等。仅有的例外是像 `el` 这样根实例特有的选项。</span><br><span class="line">&gt; 一个组件的data选项必须是一个函数</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>组件的组织</p>
+<ul>
+<li><p>通常一个应用会以一棵嵌套的组件树的形式来组织</p>
+</li>
+<li><p>为了能在模板中使用，这些组件必须先注册以便 Vue 能够识别。这里有两种组件的注册类型：全局注册和局部注册。至此，我们的组件都只是通过 <code>Vue.component</code> 全局注册的：</p>
+<ul>
+<li>全局注册的组件可以用在其被注册之后的任何 (通过 <code>new Vue</code>) 新创建的 Vue 根实例，也包括其组件树中的所有子组件的模板中。</li>
+</ul>
+</li>
+<li><p>注意局部注册的组件在其子组件中不可用</p>
+</li>
+</ul>
+</li>
+<li><p>通过propos向子组件传递数据</p>
+<ul>
+<li>Prop 是你可以在组件上注册的一些自定义 attribute。当一个值传递给一个 prop attribute 的时候，它就变成了那个组件实例的一个 property。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;blog-post&#x27;</span>, &#123;</span><br><span class="line">  props: [<span class="string">&#x27;title&#x27;</span>],</span><br><span class="line">  template: <span class="string">&#x27;&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>每个组件必须只有一个根元素</strong></p>
+</li>
+<li><p>监听子组件事件</p>
+<ul>
+<li>在其父组件中，我们可以通过添加一个 <code>postFontSize</code>:1  数据 property 来支持这个功能：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :style=<span class="string">&quot;&#123; fontSize: postFontSize + &#x27;em&#x27; &#125;&quot;</span>&gt;   &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件的嵌套"><a href="#组件的嵌套" class="headerlink" title="组件的嵌套"></a>组件的嵌套</h4><ul>
+<li><p>组件一般包含三个部分</p>
+<ul>
+<li><strong>模板:html结构 / 行为: 处理逻辑 / 样式:解决样式</strong></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import ComponentA from <span class="string">&#x27;./ComponentA.vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    ComponentA</span><br><span class="line">    等同于 ComponentA: ComponentA</span><br><span class="line">  &#125;,</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">这个属于局部注册, 需要注册components 组件</span><br><span class="line">全局注册,需要在main.js中 使用Vue.component()</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件的css作用域"><a href="#组件的css作用域" class="headerlink" title="组件的css作用域"></a>组件的css作用域</h4><ul>
+<li><code>&lt;style scoped&gt;  &lt;/style&gt;</code> 样式添加scoped就只会在当前作用域起作用,  不然就会全局起作用</li>
+</ul>
+<h4 id="组件的传值"><a href="#组件的传值" class="headerlink" title="组件的传值"></a>组件的传值</h4><ul>
+<li><p>HTML 中的 attribute 名是大小写不敏感的,prop 名需要使用其等价的 kebab-case (短横线分隔命名) 命名</p>
+</li>
+<li><p>所有的 prop 都使得其父子 prop 之间形成了一个<strong>单向下行绑定</strong>：</p>
+</li>
+<li><p>传值: number String Boolean  <strong>改变一个地方得值, 其他引用的地方不会改变</strong></p>
+</li>
+<li><p>父组件向子组件传值:</p>
+<ul>
+<li><p>在父组件的data设置usersArray数组值, 在父组件内引用子组件并通过<code>v-bind:users=&quot;usersArray&quot;</code>绑定</p>
+</li>
+<li><p>在子组件的export default 中,用props接收</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> default&#123;</span><br><span class="line">    name: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    //props:[<span class="string">&quot;users&quot;</span>]</span><br><span class="line">    props: &#123;</span><br><span class="line">        users:&#123;</span><br><span class="line">            <span class="built_in">type</span>: Array,</span><br><span class="line">            required: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>传引用: array object  <strong>传引用改变一个地方的值,所有被引用过的地方得值都会改变</strong></p>
+</li>
+<li><p>子组件向父组件传值:</p>
+<ul>
+<li><p>子组件写一个方法, 方法的值为 <code>this.$emit( &quot;changeTitle(父组件引用的方法名)&quot;, 子组件传的值 )</code></p>
+</li>
+<li><p>在父组件用v-on:changeTitle=”updataTitle( $event(接收子组件传的值) )”</p>
+</li>
+<li><p>在父组件写个updataTitle( title )方法</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="生命周期函数钩子"><a href="#生命周期函数钩子" class="headerlink" title="生命周期函数钩子"></a>生命周期函数钩子</h4><ul>
+<li><p>beforeCreate ( 组件实例化之前执行的函数)</p>
+</li>
+<li><p>created ( 组件实例化完毕,但是页面还没显示)</p>
+</li>
+<li><p>beforeMount ( 组件挂载前,页面仍未显示,但是虚拟Dom已经配置)</p>
+</li>
+<li><p>mounted ( 组件挂载后,此方法执行后,页面显示)</p>
+</li>
+<li><p>beforeUpdate (组件更新前,页面仍未更新,但是虚拟Dom已经配置)</p>
+</li>
+<li><p>updated ( 组件更新,此方法执行后,页面显示更新)</p>
+</li>
+<li><p>beforeDestory (组件销毁前)</p>
+</li>
+<li><p>destoryed (组件销毁)</p>
+</li>
+</ul>
+<h4 id="路由请求"><a href="#路由请求" class="headerlink" title="路由请求"></a>路由请求</h4><ul>
+<li><p>首先需要在终端, 下载路由 <code>npm install vue-router --save-dev</code></p>
+</li>
+<li><p>在main.js中引进<code>import VueRouter from &#39;vue-router&#39;</code></p>
+</li>
+<li><p>在main.js中使用 <code>Vue.use(VueRouter)</code></p>
+</li>
+<li><p>在main.js中配置路由</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">    routes:[</span><br><span class="line">        &#123;path: <span class="string">&quot;路由的路径&quot;</span>, component: 展示的组件&#125;</span><br><span class="line">    ],</span><br><span class="line">    mode: <span class="string">&quot;history&quot;</span>  //取消网址中的/<span class="comment">#/</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在main.js中的实例化中使用router <code>router: router</code></p>
+</li>
+<li><p>在app容器中放置需要展示的页面组件</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-view&gt;</span><br><span class="line">  &lt;component&gt;&lt;/component</span><br><span class="line">&lt;/router-view&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用路由跳转 <code>&lt;router-link to=&quot;/helloworld&quot;&gt; helloworld &lt;/router-link&gt;</code> 不使用a标签</li>
+</ul>
+<blockquote>
+<p>a标签也可以实现跳转,但是a标签每次点击跳转页面会重新全部加载,性能不好</p>
+</blockquote>
+<h4 id="vue-resourse-和路由功能相似"><a href="#vue-resourse-和路由功能相似" class="headerlink" title="vue-resourse (和路由功能相似)"></a>vue-resourse (和路由功能相似)</h4><ul>
+<li><p>安装 <code>npm install vue-resource --save-dev</code></p>
+</li>
+<li><p>在main.js中引进<code>import VueResource from &#39;vue-resource&#39;</code></p>
+</li>
+<li><p>在main.js中使用 <code>Vue.use(VueResource)</code></p>
+</li>
+<li><p>在全局范围都可以使用数据请求</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">created</span></span> () &#123;</span><br><span class="line">        this.<span class="variable">$http</span>.get(<span class="string">&quot;http://jsonplaceholder.typicode.com/users&quot;</span>)</span><br><span class="line">            .<span class="keyword">then</span>((data)=&gt;&#123;</span><br><span class="line">                this.users = data.body</span><br><span class="line">            &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h4><ul>
+<li><p>在标签内部使用 <code>&#123;&#123; blog.title | to-uppercase &#125;&#125;, &#123;&#123; blog.body | limit &#125;&#125;</code></p>
+</li>
+<li><p>在main.js中使用( 可以全局使用 )</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.filter( <span class="string">&quot;to-uppercase&quot;</span>, <span class="keyword">function</span>(value)&#123;</span><br><span class="line">    <span class="built_in">return</span> value.toUpperCase();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Vue.filter( <span class="string">&quot;limit&quot;</span>, <span class="keyword">function</span>(value)&#123;</span><br><span class="line">    <span class="built_in">return</span> value.slice(0, 100) + <span class="string">&quot; ...&quot;</span>;</span><br><span class="line">&#125; ) </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在子组件内部实现</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> default&#123;</span><br><span class="line">    filters:&#123;</span><br><span class="line">        // <span class="string">&quot;to-uppercase&quot;</span>: <span class="keyword">function</span> (value)&#123;</span><br><span class="line">        // <span class="built_in">return</span> value.toUpperCase();    </span><br><span class="line">        // &#125;</span><br><span class="line">        toUppercase(value)&#123;</span><br><span class="line">            <span class="built_in">return</span> value.toUpperCase();</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="built_in">limit</span>(value)&#123;</span><br><span class="line">            <span class="built_in">return</span> value.slice(0, 100) + <span class="string">&quot; ...&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件之间的交互"><a href="#组件之间的交互" class="headerlink" title="组件之间的交互"></a>组件之间的交互</h4><ul>
+<li><p>$http   (用于get/post获取数据)</p>
+</li>
+<li><p>$props   (单向数据绑定，只能由父组件传向子组件)，传递方式有静态值和动态值（动态需要用v-bind绑定）</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;我是父组件！&lt;/h1&gt;</span><br><span class="line">    //通过自定义属性传递数据</span><br><span class="line">    &lt;child message=<span class="string">&quot;我是子组件一！&quot;</span>&gt;&lt;/child&gt;</span><br><span class="line">    &lt;child v-bind:message=<span class="string">&quot;msg&quot;</span>&gt;&lt;/child&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Child from <span class="string">&#x27;../components/child.vue&#x27;</span></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  components: &#123;Child&#125;,</span><br><span class="line">    <span class="function"><span class="title">data</span></span> () &#123;</span><br><span class="line">        <span class="built_in">return</span>&#123;</span><br><span class="line">            msg: <span class="string">&#x27;我是子组件三！&#x27;</span>+ Math.random();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"> <span class="built_in">export</span> default &#123;</span><br><span class="line">  props: [<span class="string">&#x27;message&#x27;</span>] //声明一个自定义的属性</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>this.$refs.Tips.changeFlag();  (用于父组件调用子组件中的事件方法)</p>
+<ul>
+<li><p>如果ref用在子组件上，指向的是组件实例，可以理解为对子组件的索引，通过$ref可能获取到在子组件里定义的属性和方法。</p>
+</li>
+<li><p>如果ref在普通的 DOM 元素上使用，引用指向的就是 DOM 元素，通过$ref可能获取到该DOM 的属性集合，轻松访问到DOM元素，作用与JQ选择器类似。</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">     &lt;div&gt;</span><br><span class="line">         &lt;h1&gt;我是父组件！&lt;/h1&gt;</span><br><span class="line">         &lt;child ref=<span class="string">&quot;msg&quot;</span>&gt;&lt;/child&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line"> import Child from <span class="string">&#x27;../components/child.vue&#x27;</span></span><br><span class="line"> <span class="built_in">export</span> default &#123;</span><br><span class="line"> mounted: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  console.log( this.<span class="variable">$refs</span>.msg);</span><br><span class="line">  this.<span class="variable">$refs</span>.msg.getMessage(<span class="string">&#x27;我是子组件一！&#x27;</span>)</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="built_in">export</span> default &#123;</span><br><span class="line">    <span class="function"><span class="title">data</span></span>()&#123;</span><br><span class="line">      <span class="built_in">return</span>&#123;</span><br><span class="line">        message:<span class="string">&#x27;&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      getMessage(m)&#123;</span><br><span class="line">        this.message=m;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>prop和$ref之间的区别</p>
+<ul>
+<li><p>prop 着重于数据的传递，它并不能调用子组件里的属性和方法。像创建文章组件时，自定义标题和内容这样的使用场景，最适合使用prop。</p>
+</li>
+<li><p>$ref 着重于索引，主要用来调用子组件里的属性和方法，其实并不擅长数据传递。而且ref用在dom元素的时候，能使到选择器的作用，这个功能比作为索引更常有用到。</p>
+</li>
+</ul>
+</li>
+<li><p>通过$emit 实现通信</p>
+<ul>
+<li>$emit 实现子组件向父组件通信</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;</span><br><span class="line">    &lt;child @getMessage=<span class="string">&quot;showMsg&quot;</span>&gt;&lt;/child&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import Child from <span class="string">&#x27;../components/child.vue&#x27;</span></span><br><span class="line">  <span class="built_in">export</span> default &#123;</span><br><span class="line">    components: &#123;Child&#125;,</span><br><span class="line">    <span class="function"><span class="title">data</span></span>()&#123;</span><br><span class="line">      <span class="built_in">return</span>&#123;</span><br><span class="line">        title:<span class="string">&#x27;&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      showMsg(title)&#123;</span><br><span class="line">        this.title=title;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;h3&gt;我是子组件！&lt;/h3&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="built_in">export</span> default &#123;</span><br><span class="line">    mounted: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">      this.<span class="variable">$emit</span>(<span class="string">&#x27;getMessage&#x27;</span>, <span class="string">&#x27;我是父组件！&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>this.$route.params.id  ( 接收父组件点击传的id )</p>
+</li>
+<li><p>this.$router.push({ path:”/“ })  跳转页面</p>
+</li>
+</ul>
+<h4 id="Vue和React的区别与联系"><a href="#Vue和React的区别与联系" class="headerlink" title="Vue和React的区别与联系"></a>Vue和React的区别与联系</h4><ul>
+<li><p>相同点:</p>
+<ul>
+<li><p>他们都是JavaScript的UI框架，Reat与Vue只有框架的骨架，其他的功能如路由、状态管理等是框架分离的组件。</p>
+</li>
+<li><p>最大一个相似之处，就是他们都使用了一种叫’Virtual DOM’(虚拟DOM)的东西。</p>
+</li>
+</ul>
+</li>
+<li><p>不同点:</p>
+<ul>
+<li><p>最大的不同就是React推广了Virtual DOM（虚拟DOM）并创造了新的语法——JSX，JSX允许开发者在JavaScript中书写HTML</p>
+</li>
+<li><p>Vue使用模板系统, 模板用的就是普通的HTML，通过Vue来整合现有的系统是比较容易的，不需要整体重构。同时Vue更容易学习.</p>
+</li>
+<li><p>Vue宣称可以更快地计算出Virtual DOM的差异，这是由于它在渲染过程中，会跟踪每一个组件的依赖关系，不需要重新渲染整个组件树。</p>
+</li>
+<li><p>而对于React而言，每当应用的状态被改变时，全部子组件都会重新渲染。当然，这可以通过<code>shouldComponentUpdate</code>这个生命周期方法来进行控制。但Vue将此视为默认的优化。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="配置Json-server"><a href="#配置Json-server" class="headerlink" title="配置Json-server"></a>配置Json-server</h4><ul>
+<li><p>全局安装 <code>npm install -g json-server</code></p>
+</li>
+<li><p>新建一个JsonServer文件,并且进入JsonServer文件</p>
+</li>
+<li><p>进行初始化 <code>npm init</code></p>
+</li>
+<li><p>在JsonServer这个文件安装服务模块 <code>npm install json-server --save</code></p>
+</li>
+<li><p>配置启动命令: 在JsonServer文件下的.json文件的值为scripts ( 可以不修改 )</p>
+<ul>
+<li>“test”:”…”  改为  “json:server”:”json-server –watch db.json”</li>
+</ul>
+</li>
+<li><p>在JsonServer文件下面新建db.json, 添加数据</p>
+</li>
+<li><p>启动  npm run json:server</p>
+</li>
+</ul>
+<h4 id="使用json-server"><a href="#使用json-server" class="headerlink" title="使用json-server"></a>使用json-server</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">// 获取所有用户信息</span><br><span class="line">http://localhost:3000/users</span><br><span class="line"></span><br><span class="line">// 获取id为1用户信息</span><br><span class="line">http://localhost:3000/users/1</span><br><span class="line"></span><br><span class="line">// 获取所有公司信息</span><br><span class="line">http://localhost:3000/companies</span><br><span class="line"></span><br><span class="line">// 获取id为1公司信息</span><br><span class="line">http://localhost:3000/companies/1</span><br><span class="line"></span><br><span class="line">// 获取隶属某个公司的用户</span><br><span class="line">http://localhost:3000/companies/1/users</span><br><span class="line"></span><br><span class="line">// 根据名字获取公司</span><br><span class="line">http://localhost:3000/companies?name=华为</span><br><span class="line"></span><br><span class="line">// 根据多个名字获取公司</span><br><span class="line">http://localhost:3000/companies?name=华为&amp;name=阿里</span><br><span class="line"></span><br><span class="line">// 获取一页中只有两个数据</span><br><span class="line">&lt;!-- http://localhost:3000/companies?_page=1&amp;_limit=2 --&gt;</span><br><span class="line"></span><br><span class="line">// 根据名字升序排序  asc升序  desc降序</span><br><span class="line">&lt;!-- http://localhost:3000/companies?_sort=name&amp;_order=asc --&gt;</span><br><span class="line"></span><br><span class="line">// 获取年龄30及以上的</span><br><span class="line">http://localhost:3000/users?age_gte=30</span><br><span class="line"></span><br><span class="line">// 获取年龄30到40之间的</span><br><span class="line">http://localhost:3000/users?age_gte=30&amp;age_lte=40</span><br><span class="line"></span><br><span class="line">// 搜索用户信息</span><br><span class="line">http://localhost:3000/users?q=a</span><br><span class="line">http://localhost:3000/users?q=li</span><br></pre></td></tr></table></figure>
+
+<h4 id="更改镜像源"><a href="#更改镜像源" class="headerlink" title="更改镜像源"></a>更改镜像源</h4><ul>
+<li><p>改成淘宝镜像源 <code>npm config set registry https://registry.npm.taobao.org</code></p>
+</li>
+<li><p>检查 <code>npm config get registry</code> 或者 <code>npm info express</code></p>
+</li>
+<li><p>通过cnpm使用 <code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+</li>
+<li><p>使用 <code>cnpm install express</code></p>
+</li>
+</ul>
+<h4 id="统一文件格式设置"><a href="#统一文件格式设置" class="headerlink" title="统一文件格式设置"></a>统一文件格式设置</h4><ul>
+<li><p>新建 <code>.prettierrc</code>文件</p>
+</li>
+<li><p>里面写上</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;semi&quot;</span>: <span class="literal">false</span>, // 不使用分号</span><br><span class="line">    <span class="string">&quot;singleQuote&quot;</span>: <span class="literal">true</span>  // 将双引号用单引号代替</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="vue项目学习笔记"><a href="#vue项目学习笔记" class="headerlink" title="vue项目学习笔记"></a>vue项目学习笔记</h3><ul>
+<li><p>编码测试</p>
+<ul>
+<li><p>npm run dev</p>
+</li>
+<li><p>编码,自动编译打包</p>
+</li>
+</ul>
+</li>
+<li><p>打包发布</p>
+<ul>
+<li><p>npm run build 编译打包生成dist文件夹</p>
+</li>
+<li><p>npm install -g serve</p>
+</li>
+<li><p>serve dist</p>
+</li>
+</ul>
+</li>
+<li><p>动态绑定类名, 一般用在满足请求路由才具有什么类名, 设置样式</p>
+<ul>
+<li><code>:class = &quot;&#123;active: &#39;/editData&#39; === $route.path&#125;&quot;</code></li>
+</ul>
+</li>
+<li><p>git对项目进行版本控制</p>
+<ul>
+<li><ol>
+<li>创建本地仓库</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>创建远程仓库</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>将本地和远程仓库关联</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Vue.set(): 使新增的属性(默认没有)也有数据绑定,一般传入三个值 <code>Vue.set(foods, &#39;ciunt&#39;, 1)</code></p>
+<ul>
+<li><ol>
+<li>对象</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>属性名(字符串)</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>属性值</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>移动端滑动库: better-scroll</p>
+<ul>
+<li><p>滑动问题</p>
+<ul>
+<li><ol>
+<li>BScroll实例要为单例,防止多次创建出错</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>单例在动态改变高度时有初次无法拉动问题,使用this.scroll.refresh() 重新统计高度</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>const rue = new RegExp(this.rule)</p>
+<ul>
+<li><p>可以使字符串rule变成真正的正则表达式</p>
+</li>
+<li><p>直接使用rue.text(this.content)</p>
+</li>
+</ul>
+</li>
+<li><p>将封装好的文件挂载到Vue.prototype里面,则在所有文件里面通过this就可以拿到</p>
+<ul>
+<li>挂载封装好的http.js文件 <code>Vue.prototype.$http(封装后的名字) = http(引入的http)</code></li>
+</ul>
+</li>
+<li><p>async 和 await 作用是将异步请求的数据同步执行显示 ( 计时器里面的操作也是属于异步 ), 函数执行是先执行同步在执行异步, 使异步数据同步导出还可以用<strong>闭包</strong>或者<strong>promise</strong></p>
+</li>
+<li><p>只能输入数字<code>&lt;input type=&quot;text&quot; onkeyup=&quot;this.value=this.value.replace(/\D/g, &#39;&#39;)&quot;&gt;</code></p>
+</li>
+<li><p>注意事项：methods方法只要data数据其中之一发生变化，所有的方法都会执行一遍，性能不好，所以做好使用computed来改变data的数据值</p>
+</li>
+</ul>
+<h3 id="vue3和vue2区别"><a href="#vue3和vue2区别" class="headerlink" title="vue3和vue2区别"></a>vue3和vue2区别</h3><ul>
+<li>vue3的主要优势体现在：更快、更小、更易维护、更易于原生、开发更轻松</li>
+</ul>
+<h4 id="更快体现在"><a href="#更快体现在" class="headerlink" title="更快体现在"></a>更快体现在</h4><ul>
+<li><p>virtual DOM 完全重写，mounting &amp; patching 提速 100%</p>
+</li>
+<li><p>更多编译时 （compile-time）提醒以减少 runtime 开销</p>
+</li>
+<li><p>基于 Proxy 观察者机制以满足全语言覆盖以及更好的性能</p>
+</li>
+<li><p>放弃 Object.defineProperty ，使用更快的原生 Proxy</p>
+</li>
+<li><p>组件实例初始化速度提高 100%</p>
+</li>
+<li><p>提速一倍/内存使用降低一半</p>
+</li>
+</ul>
+<h4 id="更小体现在"><a href="#更小体现在" class="headerlink" title="更小体现在"></a>更小体现在</h4><ul>
+<li><p>Tree-shaking 更友好</p>
+</li>
+<li><p>新的 core runtime：~ 10kb gzipped</p>
+</li>
+</ul>
+<h4 id="命令和目录结构"><a href="#命令和目录结构" class="headerlink" title="命令和目录结构"></a>命令和目录结构</h4><ul>
+<li><p>新加入了 TypeScript 以及 PWA 的支持</p>
+</li>
+<li><p>部分命令发生了变化：</p>
+<ul>
+<li><p>下载安装  npm install -g vue@cli</p>
+</li>
+<li><p>删除了vue list</p>
+</li>
+<li><p>创建项目   vue create</p>
+</li>
+<li><p>启动项目   npm run serve</p>
+</li>
+<li><p>默认项目目录结构也发生了变化：</p>
+</li>
+<li><p>移除了配置文件目录，config 和 build 文件夹</p>
+</li>
+<li><p>移除了 static 文件夹，新增 public 文件夹，并且 index.html 移动到 public 中</p>
+</li>
+<li><p>在 src 文件夹中新增了 views 文件夹，用于分类 视图组件 和 公共组件</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="默认进行懒观察"><a href="#默认进行懒观察" class="headerlink" title="默认进行懒观察"></a>默认进行懒观察</h4><ul>
+<li>在 2.x 版本里，不过数据多大，都会在一开始就为其创建观察者。当数据很大时，这可能会在页面载入时造成明显的性能压力。3.x 版本，只会对「被用于渲染初始可见部分的数据」创建观察者，而且 3.x 的观察者更高效</li>
+</ul>
+<h4 id="更精准的变更通知"><a href="#更精准的变更通知" class="headerlink" title="更精准的变更通知"></a>更精准的变更通知</h4><ul>
+<li>2.x 版本中，你使用 Vue.set 来给对象新增一个属性时，这个对象的所有 watcher 都会重新运行；3.x 版本中，只有依赖那个属性的 watcher 才会重新运行</li>
+</ul>
+<h4 id="data变更"><a href="#data变更" class="headerlink" title="data变更"></a>data变更</h4><ul>
+<li>新版当中setup等效于之前2.0版本当中得到beforeCreate,和created，它是在组件初始化的时候执行，甚至是比created更早执行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">// 取而代之是使用以下的方式去初始化数据:</span><br><span class="line">// 使用name必须要用<span class="built_in">return</span>返回</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=<span class="string">&quot;hello&quot;</span>&gt;</span><br><span class="line">    123</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;obj.name&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">import &#123;reactive&#125; from <span class="string">&#x27;vue&#x27;</span> </span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line"> <span class="function"><span class="title">setup</span></span>()&#123;</span><br><span class="line">   const obj = reactive(&#123;</span><br><span class="line">     name:<span class="string">&#x27;hello 番茄&#x27;</span></span><br><span class="line">   &#125;)</span><br><span class="line">   <span class="built_in">return</span> &#123;obj&#125;</span><br><span class="line"> &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Method变更"><a href="#Method变更" class="headerlink" title="Method变更"></a>Method变更</h4><ul>
+<li><p>引用了vue提供的<strong>ref新函数</strong>，它的作用是用来创建一个引用值，它主要是对String,Number,Boolean的<strong>数据响应作引用</strong>。</p>
+</li>
+<li><p>也许有人会问，为什么不直接给count赋值，而是采用ref(0)这样的方式来创建呢，如果直接给count赋值就是等于把这个值直接抛出去了，就很难在找到它，而采用ref这种方法等于你在向外抛出去值的是同时，你还在它身上牵了一根绳子，方便去追踪它。</p>
+</li>
+<li><p>需要注意的时，在ref的函数中，如果你要去改变或者去引用它的值，ref的这个方法提供了一个value的返回值，对值进行操作。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">&quot;hello&quot;</span>&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;count&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=<span class="string">&quot;increamt&quot;</span>&gt;button&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">import &#123;reactive,ref&#125; from <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line"> <span class="function"><span class="title">setup</span></span>()&#123;</span><br><span class="line">   const count=ref(0)</span><br><span class="line">   const increamt=()=&gt;&#123;</span><br><span class="line">     count.value++</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">return</span> &#123;count,increamt&#125;</span><br><span class="line"> &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="生命周期改变"><a href="#生命周期改变" class="headerlink" title="生命周期改变"></a>生命周期改变</h4><ul>
+<li>如果要想在页面中使用生命周期函数的，根据以往2.0的操作是直接在页面中写入生命周期，而现在是需要去引用的，这就是为什么<strong>3.0能够将代码压缩到更低的原因</strong>。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">created -&gt; 请使用 setup()</span><br><span class="line">beforeMount -&gt; onBeforeMount</span><br><span class="line">mounted -&gt; onMounted</span><br><span class="line">beforeUpdate -&gt; onBeforeUpdate</span><br><span class="line">updated -&gt; onUpdated</span><br><span class="line">beforeDestroy -&gt; onBeforeUnmount</span><br><span class="line">destroyed -&gt; onUnmounted</span><br><span class="line">errorCaptured -&gt; onErrorCaptured</span><br><span class="line"></span><br><span class="line">import &#123;reactive, ref, onMounted&#125; from <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line"> <span class="function"><span class="title">setup</span></span>()&#123;</span><br><span class="line">   onMounted(()=&gt;&#123;</span><br><span class="line">     console.log(<span class="string">&#x27;123&#x27;</span>)</span><br><span class="line">   &#125;)</span><br><span class="line">   <span class="built_in">return</span> &#123;name,count,increamt&#125;</span><br><span class="line"> &#125;  </span><br></pre></td></tr></table></figure>
+
+<h4 id="computed变更"><a href="#computed变更" class="headerlink" title="computed变更"></a>computed变更</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 使用computed记得需要引入，这也是刚接触3.0容易忘记的事情</span><br><span class="line">const computeCount=computed(()=&gt;count.value*10)</span><br><span class="line"><span class="built_in">return</span> &#123;name,count,increamt,computeCount&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="数据的双向绑定"><a href="#数据的双向绑定" class="headerlink" title="数据的双向绑定"></a>数据的双向绑定</h4><ul>
+<li><p>Vue2.0使用Object.defineProperty，双向绑定不能检测到下标的变化</p>
+<ul>
+<li>原理：通过使用 Object.defineProperty 来劫持对象属性的 geter 和 seter 操作，当数据发生改变发出通知</li>
+</ul>
+</li>
+<li><p>Vue 3.0使用ES6的新特性porxy，proxy可以劫持整个对象，并返回一个新对象</p>
+<ul>
+<li>原理：通过ES6的新特性proxy来劫持数据，当数据改变时发出通知</li>
+</ul>
+</li>
+</ul>
+<h4 id="对文件的引用上"><a href="#对文件的引用上" class="headerlink" title="对文件的引用上"></a>对文件的引用上</h4><ul>
+<li><p>Vue2.x中new出的实例对象，所有的东西都在这个vue对象上，这样其实无论你用到还是没用到，都会跑一遍。</p>
+</li>
+<li><p>vue3.0中可以用ES module imports按需引入，如：keep-alive内置组件、v-model指令，等等。</p>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -674,7 +1388,7 @@
       <ul>
         
           <li>
-            <a href="/2020/12/15/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">(no title)</a>
+            <a href="/2020/12/15/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Vue学习笔记</a>
           </li>
         
           <li>
