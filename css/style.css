@@ -143,7 +143,7 @@ body {
 }
 .inner {
   display: inline-block;
-  width: 98.33333333333333%;
+  width: 94.33333333333333%;
   margin: 250px 0.833333333333333% 0;
 }
 .left,
@@ -182,7 +182,7 @@ body {
 @media screen and (min-width: 700px) {
   #main {
     display: inline-block;
-    width: 72.33333333333333%;
+    width: 76.33333333333333%;
     margin: 0 0.833333333333333%;
   }
 }
