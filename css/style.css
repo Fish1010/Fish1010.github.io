@@ -1292,7 +1292,7 @@ pre .javascript .function {
 @media screen and (min-width: 700px) {
   #sidebar {
     display: inline-block;
-    width: 22.333333333333332%;
+    width: 20.333333333333332%;
     margin: 0 0.833333333333333%;
   }
 }
@@ -1331,7 +1331,8 @@ pre .javascript .function {
 .widget {
   line-height: 1.6em;
   word-wrap: break-word;
-  font-size: 0.9em;
+  font-size: 1.2em;
+  text-align: center;
 }
 .widget ul,
 .widget ol {
